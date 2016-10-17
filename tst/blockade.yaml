@@ -1,0 +1,8 @@
+containers:
+  c1:
+    image: db
+    expose: [7777]
+    count: 3
+    
+    
+
