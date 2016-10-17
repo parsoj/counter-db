@@ -1,5 +1,13 @@
 #!/bin/bash
 
-export GOPATH=$(pwd)/..
+if ! which go >/dev/null; then
+    echo "This App is written in Golang. Please install Go 1.6"
+    exit 1
+fi
+
+if [ "$GOPATH" = "" ]; then
+   echo "please set the environment variable GOPATH to point to the 'challenge' directory"
+   exit 1
+fi
 
 go run $GOPATH/src/db/server/server.go
